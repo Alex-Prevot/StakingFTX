@@ -12,7 +12,6 @@ def amount():
     data = request.get_data()
     price = apitest.Parsing(int(data))
     price.calculateFormulaProfit()
-    print(price.allElement)
     return make_response(price.allElement, 200)
 
 if __name__ == "__main__":

@@ -8,7 +8,8 @@ class StackingValue:
                 365: 14
             },
             "URL": "FTT/USD",
-            "FutureURL": "FTT-PERP"
+            "FutureURL": "FTT-PERP",
+            "imageUrl": "https://ftx.com/static/media/ftt-staking-banner.a6546d0d.png"
         }
 
         self.SRM = {
@@ -18,7 +19,8 @@ class StackingValue:
                 365: 4
             },
             "URL": "SRM/USD",
-            "FutureURL": "SRM-PERP"
+            "FutureURL": "SRM-PERP",
+            "imageUrl": "https://ftx.com/static/media/serum-listing-banner-4.76a688af.png"
         }
 
         self.SOL = {
@@ -28,7 +30,9 @@ class StackingValue:
                 365: 6
             },
             "URL": "SOL/USD",
-            "FutureURL": "SOL-PERP"
+            "FutureURL": "SOL-PERP",
+            "imageUrl": "https://ftx.com/static/media/solana.8c9c96d2.svg"
+
         }
 
         self.RAY = {
@@ -38,7 +42,9 @@ class StackingValue:
                 365: 20
             },
             "URL": "RAY/USD",
-            "FutureURL": "RAY-PERP"
+            "FutureURL": "RAY-PERP",
+            "imageUrl": "https://ftx.com/static/media/ray.3ab64276.svg"
+
         }
 
     def getAllUrlMarkets(self) -> list:
@@ -52,6 +58,9 @@ class StackingValue:
 
     def getAllName(self) -> list:
         return [*map(lambda x: x[1]["name"], list(vars(self).items()))]
+
+    def getAllImageUrl(self) -> list:
+        return [*map(lambda x: x[1]["imageUrl"], list(vars(self).items()))]
 
 
 
