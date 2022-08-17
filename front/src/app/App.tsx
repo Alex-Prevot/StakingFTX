@@ -1,9 +1,9 @@
-import Routes from 'routes/routes';
+import Routes from "routes/routes";
 
 const App = (): JSX.Element => (
-	<>
-        <Routes/>
-	</>
+  <>
+    <Routes />
+  </>
 );
 
 export default App;

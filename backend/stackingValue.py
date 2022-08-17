@@ -9,7 +9,7 @@ class StackingValue:
             },
             "URL": "FTT/USD",
             "FutureURL": "FTT-PERP",
-            "imageUrl": "https://ftx.com/static/media/ftt-staking-banner.a6546d0d.png"
+            "imageUrl": "https://s2.coinmarketcap.com/static/img/coins/200x200/4195.png"
         }
 
         self.SRM = {
@@ -20,7 +20,7 @@ class StackingValue:
             },
             "URL": "SRM/USD",
             "FutureURL": "SRM-PERP",
-            "imageUrl": "https://ftx.com/static/media/serum-listing-banner-4.76a688af.png"
+            "imageUrl": "https://s2.coinmarketcap.com/static/img/coins/200x200/6187.png"
         }
 
         self.SOL = {
@@ -31,7 +31,7 @@ class StackingValue:
             },
             "URL": "SOL/USD",
             "FutureURL": "SOL-PERP",
-            "imageUrl": "https://ftx.com/static/media/solana.8c9c96d2.svg"
+            "imageUrl": "https://s2.coinmarketcap.com/static/img/coins/200x200/5426.png"
 
         }
 
@@ -43,7 +43,7 @@ class StackingValue:
             },
             "URL": "RAY/USD",
             "FutureURL": "RAY-PERP",
-            "imageUrl": "https://ftx.com/static/media/ray.3ab64276.svg"
+            "imageUrl": "https://i.imgur.com/7We67m1.png"
 
         }
 
@@ -61,7 +61,6 @@ class StackingValue:
 
     def getAllImageUrl(self) -> list:
         return [*map(lambda x: x[1]["imageUrl"], list(vars(self).items()))]
-
 
 
 StakeToken = StackingValue()

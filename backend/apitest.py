@@ -1,7 +1,9 @@
-from re import M
 import requests
 from stackingValue import StakeToken
 import json
+import time
+import hmac
+from requests import Request
 
 
 class PriceMarkets:
@@ -18,13 +20,34 @@ class PriceMarkets:
         return ActualStatues
 
 
-class PriceFuture:
+class Stake:
 
     @staticmethod
-    def Future() -> list:
+    def stakingPlacement(data):
+        ts = int(time.time() * 1000)
+        request = Request('POST', 'https://ftx.com/api/srm_stakes/stakes')
+        prepared = request.prepare()
+        signature_payload = f'{ts}{prepared.method}{prepared.path_url}'.encode(
+        )
+        try:
+            signature = hmac.new(str(data["secret"]).encode(),
+                                 signature_payload, 'sha256').hexdigest()
+        except:
+            return json.dumps({"success": "Encoding error"})
+        prepared.headers['FTX-KEY'] = data["public"]
+        prepared.headers['FTX-SIGN'] = signature
+        prepared.headers['FTX-TS'] = str(ts)
+
+        response = requests.post(
+            "https://ftx.com/api/srm_stakes/stakes", data["data"], headers=prepared.headers)
+        return response.json()
+
+    @staticmethod
+    def stake(ElementStake) -> list:
         FutureStatues: list[dict] = []
         for FutureUrl in StakeToken.getAllUrlFuture():
-            response = requests.get("https://ftx.com/api/futures/" + FutureUrl)
+            response = requests.post(
+                "https://ftx.com/api/srm_stakes/stakes", ElementStake)
             if response.status_code != 200:
                 FutureStatues.append({FutureUrl: "Error"})
             else:
