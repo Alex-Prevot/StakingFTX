@@ -1,3 +1,4 @@
+from waitress import serve
 from flask import Flask, make_response, request
 from flask_cors import CORS, cross_origin
 import apitest
@@ -26,4 +27,4 @@ def stake():
 
 
 if __name__ == "__main__":
-    app.run("localhost", 6969)
+    serve(app, host="0.0.0.0", port=6969)

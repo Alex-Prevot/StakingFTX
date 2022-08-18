@@ -2,7 +2,7 @@
 
 This project aims to make staking with the FTX platform
 
-## How does it work?
+## Installation
 
 ### Step 1
 >Clone this repo
@@ -13,38 +13,36 @@ git clone git@github.com:Alex-Prevot/StakingFTX.git
 ### Step 2
 >Start this project
 
-To start the project you have two possibility, you can use doker like this
-```
-docker-compose up
+To start the project you have two possibility, you can use docker like this ...
+
+```sh
+docker-compose up -d
 ```
 ```
 go to --> http://localhost:3000/
 ```
-or you can start like this, launch two terminals
+Or you can launch in development mode, like this ...
 >First terminal
-```
+```sh
 cd backend
-```
-```
+
 python3 app.py
 ```
->Seconde terminal
-```
+>Second terminal
+```sh
 cd front
-```
-```
-yarn install
-```
-```
+
 yarn start
 ```
 ```
 go to --> http://localhost:3000/
 ```
 
+## How does it work?
+
 ### Usage
 
-At the top of the site you have a bar, Enter the amount you want stake, selection your currency, click on the button "staking pool", then enter your keys, good job!
+Enter the amount you want stake, select your currency, click on the button "staking pool", then enter your keys.
 
 ## Developer
 

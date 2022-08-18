@@ -10,4 +10,4 @@ EXPOSE 6969
 
 ENV FLASK_DEBUG=0
 
-ENTRYPOINT [ "flask", "run", "--host=0.0.0.0", "--port=6969" ]
+ENTRYPOINT [ "python3", "app.py" ]
