@@ -1,6 +1,6 @@
 # Staking FTX
 
-This project aims to make staking with the FTX platform
+This project aims to make staking stats with the FTX platform
 
 ## Installation
 
